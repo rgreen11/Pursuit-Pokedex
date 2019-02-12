@@ -14,7 +14,8 @@ class App extends Component {
   console.log(this.state);
  }
  componentDidMount(){
-   Axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${this.state.pokemons.length}&limit=20`)
+   if(this.state.pokemons.length < 20){
+    Axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${this.state.pokemons.length}&limit=20`)
    .then((pokemon)=>{
      const newPokemonArr =this.state.pokemons.concat(pokemon.data.results);
      this.setState({pokemons:newPokemonArr})
@@ -22,6 +23,9 @@ class App extends Component {
    },(err)=>{
     console.log(err)
    })
+   }
+   else return;
+   
  }
   render() {
     return (
