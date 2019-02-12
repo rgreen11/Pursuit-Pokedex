@@ -1,0 +1,13 @@
+.App {
+    border: 5px solid black;
+    text-align: center;
+    border-top-color: red;
+  }
+  
+br {
+    color: green;
+}
+
+h1 {
+    color: green;
+}
