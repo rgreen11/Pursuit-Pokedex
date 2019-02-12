@@ -31,6 +31,9 @@ class App extends Component {
     return (
       <>
       <div className="App">
+      <br></br>
+      <h1>Pursuit Pokedex</h1>
+
         <LoadMore getPokemon={this.getPokemon} pokemons={this.state.pokemons} />
       </div>
       </>
