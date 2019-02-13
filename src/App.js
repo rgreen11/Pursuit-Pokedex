@@ -5,7 +5,8 @@ class App extends Component {
   constructor(props){
    super(props)
    this.state = {
-     pokemons : []
+     pokemons : [],
+     isActiveSearch : false
    }
  }
  getPokemon = pokemons => {
@@ -14,7 +15,7 @@ class App extends Component {
   console.log(this.state);
  }
  componentDidMount(){
-   if(this.state.pokemons.length < 20){
+   if(this.state.pokemons.length < 20 && this.state.isActiveSearch === false){
     Axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${this.state.pokemons.length}&limit=20`)
    .then((pokemon)=>{
      const newPokemonArr =this.state.pokemons.concat(pokemon.data.results);
@@ -24,7 +25,7 @@ class App extends Component {
     console.log(err)
    })
    }
-   else return;
+   return;
    
  }
   render() {
