@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import LoadMore from './components/loadMore'
 import Axios from 'axios';
+import poke from './components/poke.js/pokeball.png';
 class App extends Component {
   constructor(props){
    super(props)
    this.state = {
-     pokemons : []
+     pokemons : [],
+     isActiveSearch : false
    }
  }
  getPokemon = pokemons => {
@@ -14,7 +16,7 @@ class App extends Component {
   console.log(this.state);
  }
  componentDidMount(){
-   if(this.state.pokemons.length < 20){
+   if(this.state.pokemons.length < 20 && this.state.isActiveSearch === false){
     Axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${this.state.pokemons.length}&limit=20`)
    .then((pokemon)=>{
      const newPokemonArr =this.state.pokemons.concat(pokemon.data.results);
@@ -24,7 +26,7 @@ class App extends Component {
     console.log(err)
    })
    }
-   else return;
+   return;
    
  }
   render() {
@@ -34,7 +36,7 @@ class App extends Component {
       <div className="App">
       <br></br>
       <h1>Pursuit Pokedex</h1>
-
+      <img></img>
         <LoadMore getPokemon={this.getPokemon} pokemons={this.state.pokemons} />
       </div>
       </>
