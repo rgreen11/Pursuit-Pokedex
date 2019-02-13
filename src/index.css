@@ -5,7 +5,9 @@
     border-top-width:25px;
   }
   
-
+.pokeball {
+    width: 60px;
+}
 
 h1 {
     color: red;

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import LoadMore from './components/loadMore'
 import Axios from 'axios';
-import poke from './components/poke.js/pokeball.png';
 class App extends Component {
   constructor(props){
    super(props)
@@ -35,7 +34,18 @@ class App extends Component {
       
       <div className="App">
       <br></br>
+      <div className='row'>
+      <div className=' col-4' >
+      <img className='pokeball' src='https://files.slack.com/files-pri/TD416AWAE-FG4T6BAHH/pokeball.png' alt='lol' />
+
+      </div>
+      <div className='col-8'>
+      <img className='pokeball' src='https://files.slack.com/files-pri/TD416AWAE-FG4T6BAHH/pokeball.png' alt='lol' />
+
+ </div>
       <h1>Pursuit Pokedex</h1>
+
+      </div>
       <img></img>
         <LoadMore getPokemon={this.getPokemon} pokemons={this.state.pokemons} />
       </div>
