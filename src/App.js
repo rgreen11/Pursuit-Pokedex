@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import LoadMore from './components/loadMore'
 import Axios from 'axios';
+
+  
 class App extends Component {
   constructor(props){
    super(props)
@@ -31,9 +33,7 @@ class App extends Component {
   render() {
     return (
       <>
-      <div className="App">
         <LoadMore getPokemon={this.getPokemon} pokemons={this.state.pokemons} />
-      </div>
       </>
     );
   }
