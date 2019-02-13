@@ -2,12 +2,13 @@
     border: 5px solid black;
     text-align: center;
     border-top-color: red;
+    border-top-width:25px;
   }
   
-br {
-    color: green;
+.pokeball {
+    width: 60px;
 }
 
 h1 {
-    color: green;
+    color: red;
 }
