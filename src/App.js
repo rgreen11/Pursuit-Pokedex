@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import LoadMore from './components/loadMore'
-import { SearchBar, Bar} from './components/SearchBar'
+
+import  SearchBar from './components/SearchBar'
+
+import Axios from 'axios';
+
 class App extends Component {
   constructor(props){
    super(props)
    this.state = {
-     pokemons : []
+     pokemons : [],
+     isActiveSearch : false
    }
  }
  getPokemon = pokemons => {
@@ -14,25 +19,35 @@ class App extends Component {
   console.log(this.state);
  }
 
- searchPokemon = pokemon => {
-  //  this.state.pokemons.map((e)=>{
-  //     if(e !== pokemon){
-  //       return 'Enter a Pokemon'
-  //     }
-  //     return e
-  //  })
-  this.setState({pokemons:pokemon})
-  console.log(this.state);
- }
+
  
+ 
+
+ componentDidMount(){
+   if(this.state.pokemons.length < 20 && this.state.isActiveSearch === false){
+    Axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${this.state.pokemons.length}&limit=20`)
+   .then((pokemon)=>{
+     const newPokemonArr =this.state.pokemons.concat(pokemon.data.results);
+     this.setState({pokemons:newPokemonArr})
+     console.log(this.state)
+   },(err)=>{
+    console.log(err)
+   })
+   }
+   return;
+   
+ }
+
   render() {
     let poke = this.state.pokemons
     return (
       <>
       <div className="App">
+
       <div className ='container'>
-        <Bar searchPokemon={this.searchPokemon}/>
-        <SearchBar poke={poke} />
+        <SearchBar />
+      <br></br>
+      <h1>Pursuit Pokedex</h1>
         <LoadMore getPokemon={this.getPokemon} pokemons={this.state.pokemons} />
       </div>
       </div>

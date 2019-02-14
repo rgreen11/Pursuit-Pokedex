@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React from 'react';
 let style = {
-    'background-color':'red',
+    'background-color': 'red',
+    'width': '50%',
+    'color':'white'
 }
 const LoadMore = props => {
     const handleApiCall = () =>{
