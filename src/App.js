@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import LoadMore from './components/loadMore'
 import Axios from 'axios';
+
 import DisplayList from './components/displayList.js';
+
+
+import Header from './components/header'
 
 class App extends Component {
   constructor(props){
@@ -33,14 +37,21 @@ class App extends Component {
   render() {
     return (
       <>
+      
       <div className="App">
       <br></br>
+
       <h1>Pursuit Pokedex</h1>
         <DisplayList pokemons={this.state.pokemons}/>
+
+      <Header></Header>
+
         <LoadMore getPokemon={this.getPokemon} pokemons={this.state.pokemons} />
       </div>
       </>
+   
     );
+   
   }
 }
 
