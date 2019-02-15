@@ -17,11 +17,11 @@ class SearchBar extends React.Component {
         let optionsArr = []
       for(let i = 0; i < PokemonList.length; i++) {
         //   if(e.currentTarget.value === PokemonList[i].substr(PokemonList[i].length)){
-        if (PokemonList[i].indexOf(e.target.currentTarget > -1)){
+        if (PokemonList.indexOf(e.target.currentTarget > -1)){
             optionsArr.push(PokemonList[i])
             console.log(this.state)
           }
-
+          
           this.setState({search:optionsArr})
         }
     }
@@ -29,6 +29,8 @@ class SearchBar extends React.Component {
     render(){
         return ( 
             <>
+            <div className='row'>
+            <div className='col search-container'>
             <div className="Search-box">
                 <input type="text" className="searchText" placeholder ='PokeBallers...' aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" list = 'pokemonList' onChange ={this.PokeSearch}/>
                     <a className ='searchButton' href ='ok'>
@@ -44,6 +46,10 @@ class SearchBar extends React.Component {
                 }
                     </datalist>
             </div>
+            </div>
+            
+            </div>
+
               </>
         )
     }
