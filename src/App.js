@@ -5,6 +5,13 @@ import  SearchBar from './components/SearchBar'
 
 import Axios from 'axios';
 
+
+import DisplayList from './components/displayList.js';
+
+
+import Header from './components/header'
+
+
 class App extends Component {
   constructor(props){
    super(props)
@@ -19,9 +26,6 @@ class App extends Component {
   console.log(this.state);
  }
 
-
- 
- 
 
  componentDidMount(){
    if(this.state.pokemons.length < 20 && this.state.isActiveSearch === false){
@@ -42,17 +46,24 @@ class App extends Component {
     let poke = this.state.pokemons
     return (
       <>
+      
       <div className="App">
 
       <div className ='container'>
         <SearchBar />
       <br></br>
+
       <h1>Pursuit Pokedex</h1>
+        <DisplayList pokemons={this.state.pokemons}/>
+
+      <Header></Header>
         <LoadMore getPokemon={this.getPokemon} pokemons={this.state.pokemons} />
       </div>
       </div>
       </>
+   
     );
+   
   }
 }
 
