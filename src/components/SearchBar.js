@@ -16,7 +16,6 @@ class SearchBar extends React.Component {
     PokeSearch = (e) => {
         let optionsArr = []
       for(let i = 0; i < PokemonList.length; i++) {
-        //   if(e.currentTarget.value === PokemonList[i].substr(PokemonList[i].length)){
         if (PokemonList[i].indexOf(e.target.currentTarget > -1)){
             optionsArr.push(PokemonList[i])
             console.log(this.state)
