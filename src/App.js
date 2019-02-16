@@ -49,6 +49,12 @@ class App extends Component {
       
       <div className="App">
 
+      <br></br>
+      <Header></Header>
+      <DisplayList pokemons={this.state.pokemons}/>
+      <LoadMore getPokemon={this.getPokemon} pokemons={this.state.pokemons} />
+
+
       <div className ='container'>
       <Header></Header>
 
@@ -57,6 +63,7 @@ class App extends Component {
         {/* <DisplayList pokemons={this.state.pokemons}/> */}
           <LoadMore getPokemon={this.getPokemon} pokemons={this.state.pokemons} />
       </div>
+
       </div>
       </>
    
