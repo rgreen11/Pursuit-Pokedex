@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import LoadMore from './components/loadMore'
+
+import  SearchBar from './components/SearchBar'
+
 import Axios from 'axios';
+
 
 import DisplayList from './components/displayList.js';
 
 
 import Header from './components/header'
+
 
 class App extends Component {
   constructor(props){
@@ -20,6 +25,8 @@ class App extends Component {
    this.setState({pokemons:newPokemonArr});
   console.log(this.state);
  }
+
+
  componentDidMount(){
    if(this.state.pokemons.length < 20 && this.state.isActiveSearch === false){
     Axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${this.state.pokemons.length}&limit=20`)
@@ -34,15 +41,29 @@ class App extends Component {
    return;
    
  }
+
   render() {
+    let poke = this.state.pokemons
     return (
       <>
       
       <div className="App">
+
       <br></br>
       <Header></Header>
       <DisplayList pokemons={this.state.pokemons}/>
       <LoadMore getPokemon={this.getPokemon} pokemons={this.state.pokemons} />
+
+
+      <div className ='container'>
+      <Header></Header>
+
+        <SearchBar />
+
+        {/* <DisplayList pokemons={this.state.pokemons}/> */}
+          <LoadMore getPokemon={this.getPokemon} pokemons={this.state.pokemons} />
+      </div>
+
       </div>
       </>
    
