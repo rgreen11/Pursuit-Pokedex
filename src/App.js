@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
 import LoadMore from './components/loadMore'
-
 import  SearchBar from './components/SearchBar'
-
 import Axios from 'axios';
-
-
 import DisplayList from './components/displayList.js';
-
-
 import Header from './components/header'
 
 
@@ -20,6 +14,7 @@ class App extends Component {
      isActiveSearch : false
    }
  }
+ 
  getPokemon = pokemons => {
    const newPokemonArr = this.state.pokemons.concat(pokemons);
    this.setState({pokemons:newPokemonArr});
