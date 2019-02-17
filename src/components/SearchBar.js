@@ -16,18 +16,25 @@ class SearchBar extends React.Component {
     PokeSearch = (e) => {
         let optionsArr = []
       for(let i = 0; i < PokemonList.length; i++) {
+
         if (PokemonList[i].indexOf(e.target.currentTarget > -1)){
+
+        //   if(e.currentTarget.value === PokemonList[i].substr(PokemonList[i].length)){
+        if (PokemonList.indexOf(e.target.currentTarget > -1)){
             optionsArr.push(PokemonList[i])
             console.log(this.state)
           }
-
+          
           this.setState({search:optionsArr})
         }
     }
+}
 
     render(){
         return ( 
             <>
+            <div className='row'>
+            <div className='col search-container'>
             <div className="Search-box">
                 <input type="text" className="searchText" placeholder ='PokeBallers...' aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" list = 'pokemonList' onChange ={this.PokeSearch}/>
                     <a className ='searchButton' href ='ok'>
@@ -43,16 +50,18 @@ class SearchBar extends React.Component {
                 }
                     </datalist>
             </div>
+            </div>
+            
+            </div>
+
               </>
         )
     }
 
+    }
 
-}
    
   
     
-
-
 
 export default SearchBar
