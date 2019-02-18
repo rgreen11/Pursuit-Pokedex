@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React from 'react';
 let style = {
-    'background-color': 'red',
+    'backgroundColor': 'red',
     'width': '50%',
-    'color':'white'
+    'color':'white',
+    'margin':'60px'
 }
 const LoadMore = props => {
     const handleApiCall = () =>{
@@ -15,7 +16,13 @@ const LoadMore = props => {
         })
     }
     return (
+        <div className='row'>
+        <div className='col'>
+
         <button className='btn .bg-danger' onClick={handleApiCall} style={style}>Load More</button>
+
+        </div>
+        </div>
     )
 }
 

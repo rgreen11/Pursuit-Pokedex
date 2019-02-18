@@ -1,3 +1,7 @@
+.search-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 .Search-box{
 position: absolute;
 top:50%;

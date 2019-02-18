@@ -1,7 +1,12 @@
-.button{
-    background-color: white;
+.pokemon-container{
+    margin-top: 50px;
+
+}
+.pokemon-link{
+    border: 1px solid gray;
     margin: 10px;
-    padding: 5px;
-    border-radius: 5px;
-     float:left
+}
+.poke-name{
+    color: blue;
+    align-content: left;
 }
