@@ -4,7 +4,7 @@ import  SearchBar from './components/SearchBar'
 import Axios from 'axios';
 import DisplayList from './components/displayList.js';
 import Header from './components/header'
-
+import Profile from './components/Profile'
 
 class App extends Component {
   constructor(props){
@@ -25,9 +25,6 @@ handleProfileClick = pokename => {
   this.setState({profileClicked:profile})
 
 }
-
-
-
  componentDidMount(){
    if(this.state.pokemons.length < 20 && this.state.isActiveSearch === false){
     Axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${this.state.pokemons.length}&limit=20`)
@@ -44,22 +41,35 @@ handleProfileClick = pokename => {
  }
 
   render() {
-    let poke = this.state.pokemons
+    let poke = this.state.pokemons;
+    if (this.state.profileClicked.length > 1 || this.state.profileClicked !== ""){
+      return (
+        <>
+        <Header></Header>
+        <SearchBar handleProfileClick={this.handleProfileClick}/>
+        <Profile pokemon={this.state.profileClicked}></Profile>
+        </>
+      )
+    } 
+    
+    
     return (
-      <>
-      
-      <div className="App">
-      {console.log(this.state)}
-      <Header></Header>
-      <SearchBar handleProfileClick={this.handleProfileClick}/>
+        <>
+        
+        <div className="App">
+        <Header></Header>
+        <SearchBar handleProfileClick={this.handleProfileClick}/>
       <DisplayList pokemons={this.state.pokemons} handleProfileClick={this.handleProfileClick}/>
-        {/* <DisplayList pokemons={this.state.pokemons}/> */}
-      <LoadMore getPokemon={this.getPokemon} pokemons={this.state.pokemons} />
-      </div>
-
-      </>
+          {/* <DisplayList pokemons={this.state.pokemons}/> */}
+        <LoadMore getPokemon={this.getPokemon} pokemons={this.state.pokemons} />
+        </div>
+  
+      </> )
+    
+    
+    
    
-    );
+    
    
   }
 }
