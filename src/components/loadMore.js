@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 let style = {
-    'backgroundColor': 'red',
+    'backgroundColor': '#85144b',
     'width': '50%',
     'color':'white',
     'margin':'60px'
