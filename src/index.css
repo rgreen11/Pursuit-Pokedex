@@ -1,7 +1,7 @@
 .App {
     border: 0px solid black;
     text-align: center;
-    border-top-color: red;
+    border-top-color: #85144b;
     border-top-width:25px;
   }
   
@@ -10,6 +10,6 @@
 }
 
 h1 {
-    color: red;
+    color: #85144b;
     text-align: center;
 }
