@@ -45,9 +45,12 @@ handleProfileClick = pokename => {
     if (this.state.profileClicked.length > 1 || this.state.profileClicked !== ""){
       return (
         <>
+        <div className='App'>
         <Header></Header>
         <SearchBar handleProfileClick={this.handleProfileClick}/>
         <Profile pokemon={this.state.profileClicked}></Profile>
+        </div>
+        
         </>
       )
     } 
