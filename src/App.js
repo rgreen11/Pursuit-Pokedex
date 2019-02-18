@@ -58,7 +58,6 @@ handleProfileClick = pokename => {
     
     return (
         <>
-        
         <div className="App">
         <Header></Header>
         <SearchBar handleProfileClick={this.handleProfileClick}/>
@@ -66,7 +65,6 @@ handleProfileClick = pokename => {
           {/* <DisplayList pokemons={this.state.pokemons}/> */}
         <LoadMore getPokemon={this.getPokemon} pokemons={this.state.pokemons} />
         </div>
-  
       </> )
     
     
