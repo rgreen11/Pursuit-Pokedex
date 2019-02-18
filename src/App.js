@@ -11,15 +11,21 @@ class App extends Component {
    super(props)
    this.state = {
      pokemons : [],
-     isActiveSearch : false
+     isActiveSearch : false,
+     profileClicked: ''
    }
  }
  
  getPokemon = pokemons => {
    const newPokemonArr = this.state.pokemons.concat(pokemons);
-   this.setState({pokemons:newPokemonArr});
-  console.log(this.state);
+   this.setState({pokemons:newPokemonArr})
  }
+handleProfileClick = pokename => {
+  let profile = pokename;
+  this.setState({profileClicked:profile})
+
+}
+
 
 
  componentDidMount(){
@@ -43,9 +49,10 @@ class App extends Component {
       <>
       
       <div className="App">
+      {console.log(this.state)}
       <Header></Header>
-      <SearchBar />
-      <DisplayList pokemons={this.state.pokemons}/>
+      <SearchBar handleProfileClick={this.handleProfileClick}/>
+      <DisplayList pokemons={this.state.pokemons} handleProfileClick={this.handleProfileClick}/>
         {/* <DisplayList pokemons={this.state.pokemons}/> */}
       <LoadMore getPokemon={this.getPokemon} pokemons={this.state.pokemons} />
       </div>
