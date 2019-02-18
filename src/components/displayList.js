@@ -18,7 +18,7 @@ const DisplayList = (props)=>{
                     <img src={`https://img.pokemondb.net/sprites/sun-moon/icon/${e.name}.png`}/>
                     </div>
                     <div className='col-10 poke-name'>
-                    <p className='poke-name'>{e.name}</p>
+                    <p>{e.name}</p>
                     </div>
                     <div className='col'>
                     #{i+1}
