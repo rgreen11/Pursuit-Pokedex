@@ -5,6 +5,10 @@ import './displayList.css';
 
 const DisplayList = (props)=>{
     const pokemon = props.pokemons
+   const ProfileClick = (e) => {
+       console.log(e.target.id)
+        props.handleProfileClick(e.target.id)
+    }   
    
         return (
             <>
@@ -18,7 +22,7 @@ const DisplayList = (props)=>{
                     <img src={`https://img.pokemondb.net/sprites/sun-moon/icon/${e.name}.png`}/>
                     </div>
                     <div className='col-10 poke-name'>
-                    <p className='poke-name'>{e.name}</p>
+                    <p id={e.name} onClick ={ProfileClick}>{e.name}</p>
                     </div>
                     <div className='col'>
                     #{i+1}

@@ -23,7 +23,10 @@ class SearchBar extends React.Component {
             
         }
 
-          }    
+          }
+    ProfileClick = (e) => {
+        this.props.handleProfileClick(e.target.value)
+    }    
           
     PokeClick = (e) => {
         let name = [];
@@ -56,9 +59,10 @@ class SearchBar extends React.Component {
                         ' alt ='' height ='60px' className="img"/>  
                     </a>
                     <datalist id ='pokemonList' >
+                   
                     {
                     this.state.search.map((e,i)=>{
-                        return <option value = {`${e}`} key ={i} />
+                        return <option value = {`${e}`} key ={i} onClick={this.ProfileClick} />
                     })
                 }
                     </datalist>
