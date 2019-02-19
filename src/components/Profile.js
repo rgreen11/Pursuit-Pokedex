@@ -39,7 +39,7 @@ class Profile extends Component {
             <>
             <div className='profile'>
             {console.log(this.state.stats , "is stats")}        
-            </div>
+            
             <div className='row'>
             <div className='col col-9'></div>
             <div className='col col-3 pokemon-name'>
@@ -67,7 +67,7 @@ class Profile extends Component {
             <div className='col col-2'>
             <img src={this.state.stats.sprites.back_default}></img>
             <div className = 'row'>
-            <p>default</p>
+            <p style={{'font-weight':'bold'}}>default</p>
             </div>
             </div>
             <div className='col col-2'>
@@ -75,6 +75,19 @@ class Profile extends Component {
             </div>
             <div className='col col-2'>
             <img src={this.state.stats.sprites.back_shiny} ></img>
+            </div>
+            </div>
+            <div className='row stats'>
+            <div className='col'><h1>Base stats</h1>
+</div>
+</div>
+            <div className='row pokemon-stats'>
+            <div className='col'>HP</div>
+            <div className='col'>Attack</div>
+            <div className='col'>Defense</div>
+            <div className='col'>Sp.Attack</div>
+            <div className='col'>Sp.Defense</div>
+            <div className='col'>Speed</div>
             </div>
             </div>
             </> 

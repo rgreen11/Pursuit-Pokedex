@@ -1,8 +1,10 @@
 .App {
-    border: 0px solid black;
-    text-align: center;
+    border-top: 25px solid ;
     border-top-color: #85144b;
-    border-top-width:25px;
+    border-top-width:100;
+  }
+  .header {
+      text-align: center;
   }
   
 .pokeball {
