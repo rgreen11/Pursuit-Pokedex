@@ -20,9 +20,9 @@
 .poke-moves {
     flex-wrap: nowrap;
     overflow-x:auto;
+    padding-left: 25px;
 }
 .move {
-    border: 2px solid black;
     margin: 10px;
     font-weight: bolder;
     cursor:pointer;

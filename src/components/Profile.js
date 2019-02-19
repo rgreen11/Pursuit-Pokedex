@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Axios from 'axios'
 import './Profile.css'
+import Moves from './Moves'
 class Profile extends Component {
     constructor(props){
         super(props);
@@ -188,18 +189,8 @@ class Profile extends Component {
             <h1>Moves</h1>
             </div>
             <div className= 'row poke-moves'>
-            {
-                this.state.stats.moves.map((e,i)=>{
-                    return (
-                        <>
-                        <div className='col col-2 move'>
-                        <p onClick={this.moveClick} id={e.move.name}>{e.move.name}</p>
-
-                        </div>
-                        </>
-                    )
-                })
-            }
+            <Moves moves={this.state.stats.moves} />
+                        
             </div>
             </div>
             </div>
