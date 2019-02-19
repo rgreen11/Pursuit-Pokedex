@@ -8,7 +8,11 @@
     width: 50%;
 }
 .pokemon-stats{
-    border: 1px solid gray
+    justify-content: center;
+    border: 1px solid gray;
+    max-inline-size: 100%;
+    border-radius: 1px;
+
 }
 .pokemon-nums{
     border-left: 1px solid gray
