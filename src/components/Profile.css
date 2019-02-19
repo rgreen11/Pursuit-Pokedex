@@ -7,3 +7,9 @@
 .poke-avatar{
     width: 50%;
 }
+.pokemon-stats{
+    border: 1px solid gray
+}
+.pokemon-nums{
+    border-left: 1px solid gray
+}

@@ -4,8 +4,7 @@ let style = {
     'backgroundColor': '#85144b',
     'width': '50%',
     'color':'white',
-    'margin':'60px'
-}
+    'margin':'60px'}
 const LoadMore = props => {
     const handleApiCall = () =>{
         axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${props.pokemons.length}&limit=20`)
@@ -17,7 +16,7 @@ const LoadMore = props => {
     }
     return (
         <div className='row'>
-        <div className='col'>
+        <div className='col' style={{textAlign:'center'}}>
 
         <button className='btn .bg-danger' onClick={handleApiCall} style={style}>Load More</button>
 
