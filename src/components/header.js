@@ -4,14 +4,14 @@ const Header = props => {
     return (
         <div className='row'>
         <div className=' col-4' >
-        <img className='pokeball' src='https://files.slack.com/files-pri/TD416AWAE-FG4T6BAHH/pokeball.png' alt='lol' />
+        <img className='pokeball' src='https://ih1.redbubble.net/image.154435705.5064/ap,550x550,12x12,1,transparent,t.u2.png' alt='lol' />
         </div>
         <div className='col-4'>
         <h1>Pursuit Pokedex</h1>
    
         </div>
         <div className='col-4'>
-        <img className='pokeball' src='https://files.slack.com/files-pri/TD416AWAE-FG4T6BAHH/pokeball.png' alt='lol' />
+        <img className='pokeball' src='https://ih1.redbubble.net/image.154435705.5064/ap,550x550,12x12,1,transparent,t.u2.png' alt='lol' />
   
    </div>
   
