@@ -15,7 +15,12 @@ class Profile extends Component {
                     front_shiny: 'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjl8vyIxsbgAhUvnOAKHQ8yCHAQjRx6BAgBEAU&url=http%3A%2F%2Faj-failure-club.wikia.com%2Fwiki%2FFile%3ALoading-gif-transparent-background-11.gif&psig=AOvVaw0m_XfemyssdmAzTcrKzyG-&ust=1550622758333041',
                     back_shiny: 'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjl8vyIxsbgAhUvnOAKHQ8yCHAQjRx6BAgBEAU&url=http%3A%2F%2Faj-failure-club.wikia.com%2Fwiki%2FFile%3ALoading-gif-transparent-background-11.gif&psig=AOvVaw0m_XfemyssdmAzTcrKzyG-&ust=1550622758333041',
                 },
-                id:1
+                id:1,
+                types : [{
+                    type: {
+                        name:'lol'
+                    }
+                }]
             }
         }
     }
@@ -44,6 +49,17 @@ class Profile extends Component {
             <div className='row'>
             <div className='col col-4'>
             <img  className='poke-avatar' src={`https://img.pokemondb.net/artwork/${this.state.stats.name}.jpg`}></img>
+            <div className='row'>
+            {
+                this.state.stats.types.map((e,i)=>{
+                 return (
+                     <div className='col'>
+                 <button className='btn btn-primary'>{e.type.name}</button> 
+                 </div>
+                 )
+                })
+            }
+            </div>
             </div>
             <div className='col col-2'>
             <img src={this.state.stats.sprites.front_default}></img>
