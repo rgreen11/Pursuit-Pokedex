@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import './MovesModal.css'
 import {ModalHeader,Modal,ModalBody} from 'reactstrap'
 class MovesModal extends React.Component {
     constructor(props) {
@@ -30,7 +31,7 @@ class MovesModal extends React.Component {
     render() {
       return (
         <div className='moves-modal-label'>
-          <button className='moves-button' onClick={this.toggle}>{(this.props.move.name)}</button>
+          <button className='moves-button btn' onClick={this.toggle}>{(this.props.move.name)}</button>
           <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
             <ModalHeader toggle={this.toggle}>{this.props.move.name}</ModalHeader>
             {!this.state.moveInfo?<ModalBody></ModalBody>
