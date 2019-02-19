@@ -98,7 +98,7 @@ class Profile extends Component {
                 this.state.stats.types.map((e,i)=>{
                     if (i > 0) {
                         return (
-                        <button className='btn' style={{backgroundColor:this.state.colors[e.type.name]}}>{e.type.name}</button> 
+                        <button className='btn' key={i} style={{backgroundColor:this.state.colors[e.type.name]}}>{e.type.name}</button> 
                         )
                     }
                  else return (
@@ -133,7 +133,7 @@ class Profile extends Component {
             <div className='col'>{
                 this.state.stats.stats.map((e,i)=>{
                     if (e.stat.name === 'hp'){
-                        return <p>{e.base_stat}</p>
+                        return <p key={i}>{e.base_stat}</p>
                     }
                 })
             }</div>
@@ -142,7 +142,7 @@ class Profile extends Component {
             <div className='col'>{
                 this.state.stats.stats.map((e,i)=>{
                     if (e.stat.name === 'attack'){
-                        return <p>{e.base_stat}</p>
+                        return <p key={i}>{e.base_stat}</p>
                     }
                 })
             }</div>
@@ -151,7 +151,7 @@ class Profile extends Component {
             <div className='col'>{
                 this.state.stats.stats.map((e,i)=>{
                     if (e.stat.name === 'defense'){
-                        return <p>{e.base_stat}</p>
+                        return <p key={i}>{e.base_stat}</p>
                     }
                 })
             }</div>
@@ -160,7 +160,7 @@ class Profile extends Component {
             <div className='col'>{
                 this.state.stats.stats.map((e,i)=>{
                     if (e.stat.name === 'special-attack'){
-                        return <p>{e.base_stat}</p>
+                        return <p key={i}>{e.base_stat}</p>
                     }
                 })
             }</div>
@@ -169,7 +169,7 @@ class Profile extends Component {
             <div className='col'>{
                 this.state.stats.stats.map((e,i)=>{
                     if (e.stat.name === 'special-defense'){
-                        return <p>{e.base_stat}</p>
+                        return <p key={i}>{e.base_stat}</p>
                     }
                 })
             }</div>
@@ -178,7 +178,7 @@ class Profile extends Component {
             <div className='col'>{
                 this.state.stats.stats.map((e,i)=>{
                     if (e.stat.name === 'speed'){
-                        return <p>{e.base_stat}</p>
+                        return <p key={i}>{e.base_stat}</p>
                     }
                 })
             }</div>
