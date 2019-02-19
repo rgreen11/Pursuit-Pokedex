@@ -65,7 +65,6 @@ handleHomeClick = () => {
         <div className="App">
         <Header></Header>
         <SearchBar handleProfileClick={this.handleProfileClick}/>
-        <HomeButton></HomeButton>
       <DisplayList pokemons={this.state.pokemons} handleProfileClick={this.handleProfileClick}/>
           {/* <DisplayList pokemons={this.state.pokemons}/> */}
         <LoadMore getPokemon={this.getPokemon} pokemons={this.state.pokemons} />
