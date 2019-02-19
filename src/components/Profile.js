@@ -20,6 +20,14 @@ class Profile extends Component {
                     type: {
                         name:'lol'
                     }
+                }],
+                stats : [{
+                    base_stat:1,
+                    stat: {
+                        name:'speed',
+                        url:'google.com'
+
+                    }
                 }]
             }
         }
@@ -67,7 +75,7 @@ class Profile extends Component {
             <div className='col col-2'>
             <img src={this.state.stats.sprites.back_default}></img>
             <div className = 'row'>
-            <p style={{'font-weight':'bold'}}>default</p>
+            <p style={{'fontWeight':'bold'}}>default</p>
             </div>
             </div>
             <div className='col col-2'>
@@ -82,12 +90,60 @@ class Profile extends Component {
 </div>
 </div>
             <div className='row pokemon-stats'>
-            <div className='col'>HP</div>
-            <div className='col'>Attack</div>
-            <div className='col'>Defense</div>
-            <div className='col'>Sp.Attack</div>
-            <div className='col'>Sp.Defense</div>
-            <div className='col'>Speed</div>
+            <div className='col'> HP
+            <div className='col'>{
+                this.state.stats.stats.map((e,i)=>{
+                    if (e.stat.name === 'hp'){
+                        return <p>{e.base_stat}</p>
+                    }
+                })
+            }</div>
+            </div>
+            <div className='col'>Attack
+            <div className='col'>{
+                this.state.stats.stats.map((e,i)=>{
+                    if (e.stat.name === 'attack'){
+                        return <p>{e.base_stat}</p>
+                    }
+                })
+            }</div>
+            </div>
+            <div className='col'>Defense
+            <div className='col'>{
+                this.state.stats.stats.map((e,i)=>{
+                    if (e.stat.name === 'defense'){
+                        return <p>{e.base_stat}</p>
+                    }
+                })
+            }</div>
+            </div>
+            <div className='col'>Sp.Attack
+            <div className='col'>{
+                this.state.stats.stats.map((e,i)=>{
+                    if (e.stat.name === 'special-attack'){
+                        return <p>{e.base_stat}</p>
+                    }
+                })
+            }</div>
+            </div>
+            <div className='col'>Sp.Defense
+            <div className='col'>{
+                this.state.stats.stats.map((e,i)=>{
+                    if (e.stat.name === 'special-defense'){
+                        return <p>{e.base_stat}</p>
+                    }
+                })
+            }</div>
+            </div>
+            <div className='col'>Speed
+            <div className='col'>{
+                this.state.stats.stats.map((e,i)=>{
+                    if (e.stat.name === 'speed'){
+                        return <p>{e.base_stat}</p>
+                    }
+                })
+            }</div>
+            </div>
             </div>
             </div>
             </> 
