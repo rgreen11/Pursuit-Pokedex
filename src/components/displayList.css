@@ -3,9 +3,13 @@
 
 }
 .pokemon-link{
+
     border-radius: 25px;
     border: 1px solid gray;
     margin: 10px;
+}
+.pokemon-link:hover{
+    font-size: 150%;
 }
 .poke-name{
     color: blue;
