@@ -54,8 +54,6 @@ handleProfileClick = pokename => {
         </>
       )
     } 
-    
-    
     return (
         <>
         
