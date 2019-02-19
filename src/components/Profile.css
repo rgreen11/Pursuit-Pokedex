@@ -5,15 +5,38 @@
     justify-content: right
 }
 .poke-avatar{
-    width: 50%;
+    position: relative;
+    top: -60px;
+    /* height: 40%; */
 }
 .pokemon-stats{
-    justify-content: center;
+    margin-left: 80px;
+    margin-right: 80px;
     border: 1px solid gray;
     max-inline-size: 100%;
     border-radius: 1px;
 
 }
+.poke-moves {
+    flex-wrap: nowrap;
+    overflow-x:auto;
+}
+.move {
+    border: 2px solid black;
+    margin: 10px;
+    font-weight: bolder;
+    cursor:pointer;
+
+}
+h1 {
+    text-align: center
+}
+.type{
+    margin-left: 20px;
+}
 .pokemon-nums{
     border-left: 1px solid gray
+}
+.pokemon-name{
+    font-weight: bolder;
 }

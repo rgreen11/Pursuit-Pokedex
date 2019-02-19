@@ -9,6 +9,7 @@ class SearchBar extends React.Component {
         super(props)
         this.state = {
             search : PokemonList,
+            pokemon:''
         }
     }
 
@@ -18,24 +19,27 @@ class SearchBar extends React.Component {
             this.setState({search:[]})
         } else if(this.state.search.includes(e.target.value)){
            this.state.search.map((e)=>{
-            this.setState({search:e});
+            this.setState({pokemon:e});
             }) 
             
         }
 
           }
     ProfileClick = (e) => {
-        this.props.handleProfileClick(e.target.value)
+        console.log(e);
+        this.props.handleProfileClick(e)
     }    
           
     PokeClick = (e) => {
         let name = [];
         console.log('check me out', this.state)
             if(e.target.value){
-                name.push(e.target.value)
+                name.push(e.target.id)
             }
-            this.setState({search:name})
-    }
+            this.setState({pokemon:name},()=>{
+                this.ProfileClick(e)})  
+            }
+    
 
 
     Searchimage = (props) => {
@@ -59,10 +63,9 @@ class SearchBar extends React.Component {
                         ' alt ='' height ='60px' className="img"/>  
                     </a>
                     <datalist id ='pokemonList' >
-                   
                     {
                     this.state.search.map((e,i)=>{
-                        return <option value = {`${e}`} key ={i} onClick={this.ProfileClick} />
+                        return <option value= {`${e}`} id={e} key ={i} onClick={this.ProfileClick} />
                     })
                 }
                     </datalist>
