@@ -1,3 +1,9 @@
 .profile {
     margin-top: 50px;
 }
+.pokemon-name{
+    justify-content: right
+}
+.poke-avatar{
+    width: 50%;
+}
