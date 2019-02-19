@@ -17,7 +17,6 @@ const LoadMore = props => {
     return (
         <div className='row'>
         <div className='col' style={{textAlign:'center'}}>
-
         <button className='btn .bg-danger' onClick={handleApiCall} style={style}>Load More</button>
 
         </div>
