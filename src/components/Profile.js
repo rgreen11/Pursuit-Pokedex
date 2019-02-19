@@ -28,6 +28,9 @@ class Profile extends Component {
         Axios.get(`https://pokeapi.co/api/v2/pokemon/${this.props.pokemon}`)
         .then((data)=>{
             const newStats = data.data;
+            data.data.moves.map((e)=>{
+                console.log('name---------------',e.move.name)
+            })
             this.setState({stats:newStats})
         },(err)=> console.log(err.toString()))
     }
@@ -98,3 +101,37 @@ class Profile extends Component {
 }
 
 export default Profile;
+
+
+BaseStatus = () => {
+     
+    const name = this.state.stats
+   // const handleApiCall = () =>{
+       componentDidMount = () => {
+       axios.get(`https://pokeapi.co/api/v2/pokemon/bulbasaur`)
+           .then((response)=> {
+               response.data.stats.map((e)=>{
+                       name.push(e.stat.name, e.base_stat) 
+                 })
+               },(err) =>{
+                console.log('error');
+               })
+           }
+            
+           // }
+
+               console.log('------------', name)
+               let display = ''
+               name.map((e,i) => { return display = display + parseInt(e)})
+               console.log('------------',[9,8,7,6,5,4])
+               render () {
+                return (
+                   <>
+                   <div className='pokemon-container'>
+                       <p>{name}</p>
+               </div>
+                   </>
+                )
+           }
+       }
+   }
