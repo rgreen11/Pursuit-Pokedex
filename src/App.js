@@ -22,7 +22,7 @@ class App extends Component {
    this.setState({pokemons:newPokemonArr})
  }
 handleProfileClick = pokename => {
-  let profile = pokename;
+  let profile = pokename.toLowerCase();
   this.setState({profileClicked:profile})
 
 }
