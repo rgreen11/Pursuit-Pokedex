@@ -69,13 +69,13 @@ handleHomeClick = () => {
         <LoadMore getPokemon={this.getPokemon} pokemons={this.state.pokemons} />
         </div>
       </> )
-    
-    
-    
-   
-    
    
   }
 }
 
 export default App;
+
+
+/*
+When the pokemon name is clicked render the Profile
+*/
