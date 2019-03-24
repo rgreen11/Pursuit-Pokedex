@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import './MovesModal.css'
 import {ModalHeader,Modal,ModalBody} from 'reactstrap'
+
 class MovesModal extends React.Component {
     constructor(props) {
       super(props);
@@ -9,10 +10,9 @@ class MovesModal extends React.Component {
         modal: false,
         move: this.props.move,
         moveInfo: ''
-      };
+      }
       this.toggle = this.toggle.bind(this);
     }
-  
     toggle() {
       this.setState(prevState => ({
         modal: !prevState.modal
